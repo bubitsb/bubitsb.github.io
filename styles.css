@@ -1,64 +1,91 @@
+/* Alap stílusok */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-}
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .service-card {
-        width: 90%;
-        margin: 10px auto;
-    }
-}
-
-header {
-    background-color: navy;
-    color: white;
     text-align: center;
-    padding: 20px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    background-color: darkblue;
-}
-
-nav ul li {
-    display: inline;
-    margin: 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Hős szekció (hero) háttérkép beállítása */
 .hero {
-    background-image: url('images/background1.jpg'); /* Path to your image */
-    background-size: cover;  /* Cover the entire section */
-    background-position: center;  /* Center the image */
-    background-repeat: no-repeat; /* Prevent image repetition */
-    height: 100vh; /* Full viewport height */
+    position: relative;
+    background-image: url('images/background1.jpg'); /* Cseréld ki a saját képedre */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Teljes képernyőmagasság */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Szöveges tartalom a hős szekcióban */
+.hero-content {
     text-align: center;
-    color: white; /* Set text color to white */
+    z-index: 2;
+    /*background: rgba(0, 0, 0, 0.1); /* Áttetsző fekete háttér */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* A lenti szekciók (szolgáltatások és kapcsolat) a hero szekcióban */
+.overlay-sections {
+    position: absolute;
+    bottom: 10%; /* 10% távolság az aljától */
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Szekciók formázása */
+.services, .contact {
+    /*background: rgba(255, 255, 255, 0.8); /* Áttetsző fehér háttér */
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Szolgáltatások listája */
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Kapcsolati adatok */
+.contact a {
+    color: #012d6b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Mobilbarát dizájn */
+@media (max-width: 768px) {
+    .overlay-sections {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        bottom: 5%;
+    }
+
+    .services, .contact {
+        width: 100%;
+        padding: 15px;
+    }
 }
