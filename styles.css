@@ -6,6 +6,18 @@ body {
     color: #333;
 }
 
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .service-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
 header {
     background-color: navy;
     color: white;
@@ -36,4 +48,17 @@ section {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+    background-image: url('images/background1.jpg'); /* Path to your image */
+    background-size: cover;  /* Cover the entire section */
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Set text color to white */
 }
