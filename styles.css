@@ -1,4 +1,4 @@
-/* Alap stílusok */
+/* Alap beállítások */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,84 +8,65 @@ body {
     text-align: center;
 }
 
-/* Hős szekció (hero) háttérkép beállítása */
+/* Hero szekció */
 .hero {
     position: relative;
-    background-image: url('images/background1.jpg'); /* Cseréld ki a saját képedre */
+    background-image: url('images/background1.jpg'); /* Saját kép elérési útvonala */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Teljes képernyőmagasság */
+    height: 100vh; /* Teljes képernyős */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
-/* Szöveges tartalom a hős szekcióban */
+/* Középső szöveg */
 .hero-content {
-    text-align: center;
-    z-index: 2;
-    /*background: rgba(0, 0, 0, 0.1); /* Áttetsző fekete háttér */
+    /*background: rgba(0, 0, 0, 0.5); /* Áttetsző fekete háttér */
     padding: 20px;
     border-radius: 10px;
+    max-width: 80%;
 }
 
-/* A lenti szekciók (szolgáltatások és kapcsolat) a hero szekcióban */
+/* Az alsó szekciók mobilbarát elrendezése */
 .overlay-sections {
-    position: absolute;
-    bottom: 10%; /* 10% távolság az aljától */
-    width: 80%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row; /* Asztali nézetben egymás mellett */
+    justify-content: center;
     gap: 20px;
+    width: 80%;
+    margin-top: 30px;
 }
 
-/* Szekciók formázása */
+/* Szolgáltatások és kapcsolat szekciók */
 .services, .contact {
-    /*background: rgba(255, 255, 255, 0.8); /* Áttetsző fehér háttér */
+    /*background: rgba(255, 255, 255, 0.9); /* Átlátszó fehér háttér */
     padding: 20px;
     border-radius: 10px;
     width: 45%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);*/
 }
 
-/* Szolgáltatások listája */
-.services ul {
-    list-style: none;
-    padding: 0;
-}
-
-.services li {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-/* Kapcsolati adatok */
-.contact a {
-    color: #012d6b;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
-/* Mobilbarát dizájn */
+/* Mobilbarát verzió */
 @media (max-width: 768px) {
+    .hero {
+        height: auto; /* Ne legyen teljes képernyős mobilon */
+        padding-bottom: 50px;
+    }
+
     .overlay-sections {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Mobilon egymás alá kerülnek */
         width: 90%;
-        bottom: 5%;
+        margin-top: 20px;
     }
 
     .services, .contact {
-        width: 100%;
+        width: 100%; /* Teljes szélesség mobilon */
         padding: 15px;
     }
 }
